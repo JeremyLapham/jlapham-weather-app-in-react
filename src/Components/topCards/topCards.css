@@ -1,0 +1,95 @@
+.inputField {
+    margin-top: 147px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 50px;
+    border-radius: 15px;
+}
+
+.topBox {
+    background-image: linear-gradient(to left, white, #0076E4);
+    height: 265px;
+    border-radius: 5px;
+}
+
+.favBox {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 441px;
+    height: calc(208px * 1.03);
+    margin-left: 70px;
+    border-radius: 0 0 20px 20px;
+    margin-top: -8px;
+    overflow: scroll;
+}
+
+.favTxt {
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-left: 70px;
+    width: 441px;
+    height: 57px;
+    border-radius: 20px 20px 0 0;
+    padding-left: 30px;
+    position: sticky;
+}
+
+.starSize {
+    height: 30px;
+    cursor: pointer;
+}
+
+.currentTxt {
+    margin-left: 24px;
+    padding-top: 10px;
+    font-style: italic;
+}
+
+.insidePlacing {
+    margin-top: 3rem;
+}
+
+.topIcon {
+    margin-top: -3rem;
+}
+
+.tempNow {
+    font-size: 80px;
+}
+
+.typeCitySize {
+    font-size: 24px;
+}
+
+@media screen and (max-width: 426px) and (min-width: 325px) {
+    .favBox {
+        width: auto;
+        margin-left: 0;
+        border-left:1px solid;
+        border-bottom:1px solid;
+        border-right:1px solid;
+    }
+    
+    .favTxt {
+        width: auto;
+        margin-left: 0;
+        border:1px solid;
+    }
+
+    .topIcon {
+        margin-top: -5rem;
+        margin-left: 2rem;
+    }
+
+    .tempNow {
+        font-size: 50px;
+        margin-left:4rem;
+    }
+
+    .typeCitySize {
+        font-size: 20px;
+        margin-left:4rem;
+    }
+
+    .topBox {
+        height: 370px;
+        margin-bottom:2rem;
+    }
+}
