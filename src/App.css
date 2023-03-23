@@ -1,62 +1,61 @@
-.clearDay {
-  background-image: linear-gradient(to right, white, #0076E4);
+.Clear {
+  background-image: url(./assets/clear.png);
   padding-bottom: 5rem;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cloudDay {
-  background-image: linear-gradient(to right, white, #59748C);
+.Clouds {
+  background-image: url(./assets/Clouds.png);
   padding-bottom: 5rem;
-  height: 100vh;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.circleSun {
-  background-color: #FFB800;
-  height: 315px;
-  width: 315px;
-  border-radius: 100%;
-  margin-left: -8rem;
-  margin-top: -8rem;
-  position: fixed;
+.Tornado,
+.Thunderstrom {
+  background-image: url(./assets/thunder.jpg);
+  padding-bottom: 5rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cloudy {
-  background-color: #D9D9D9;
-  width: 309px;
-  height: 128px;
-  border-radius: 100%;
-  position: fixed;
-  z-index: -1;
+.Mist,
+.Rain,
+.Drizzle {
+  background-image: url(./assets/drizzle.jpg);
+  padding-bottom: 5rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cloud1_1 {
-  margin-left: 20rem;
+.Snow {
+  background-image: url(./assets/snow.jpg);
+  padding-bottom: 5rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cloud1_2 {
-  margin-top: 3rem;
-  margin-left: 15rem;
+.Haze,
+.Dust,
+.Fog,
+.Sand,
+.Dust,
+.Ash,
+.Squall,
+.Smoke {
+  background-image: url(./assets/storm.jpg);
+  padding-bottom: 5rem;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.cloud1_3 {
-  margin-top: 3rem;
-  margin-left: 27rem;
-}
-
-.cloud2_1 {
-  margin-top: 4rem;
-  margin-left: 80rem;
-}
-
-.cloud2_2 {
-  margin-top: 7rem;
-  margin-left: 69rem;
-}
-
-.cloud2_3 {
-  margin-top: 4.5rem;
-  margin-left: 63.5rem;
-}
 
 .daysOfWeatherBox {
   margin-bottom: 3rem;
@@ -117,35 +116,26 @@
 }
 
 @media screen and (max-width: 426px) and (min-width: 325px) {
-  .circleSun {
-    background-color: #FFB800;
-    height: 315px;
-    width: 315px;
-    border-radius: 100%;
-    margin-left: -8rem;
-    margin-top: -8rem;
-    position: absolute
-    ;
+  .scrollButton {
+    display: none;
   }
 
-  .scrollButton {
-    display:none;
-  }
   ::-webkit-scrollbar {
     width: 12px;
     background-color: #F5F5F5;
     border-radius: 10px;
   }
-  
+
   ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
     background: #000000;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: #9C9C9C;
   }
+
   .daysOfWeatherBox {
     margin-bottom: 3rem;
     margin-top: 3rem;

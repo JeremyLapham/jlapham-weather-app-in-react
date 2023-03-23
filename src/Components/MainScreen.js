@@ -6,7 +6,6 @@ import TopCards from './topCards/topCards';
 import DateWeather from './dateWeatherCards/dateWeather';
 import BottomBox from './bottomBox/bottomBox';
 import { SearchWeatherData, GetWeatherDataForToday } from './Services/DataService';
-import { removeFromLocalStorage, getLocalStorage, saveToLocalStorageByCity } from '../Components/Services/localStorage';
 
 export default function MainScreen() {
     const [dayOneDate, setDayOneDate] = useState('');
@@ -41,27 +40,6 @@ export default function MainScreen() {
     const [tempArray, setTempArray] = useState([Array(8).fill(null)]);
     const [weatherTypeArray, setWeatherTypeArray] = useState([Array(8).fill(null)]);
     const [currentTimeArray, setCurrentTimeArray] = useState([Array(8).fill(null)]);
-
-    // const [city, setCity] = useState('');
-    // const [suggestions, setSuggestions] = useState([]);
-
-    // const handleInputChange = async (event) => {
-    //     const input = event.target.value;
-    //     setCity(input);
-
-    //     try {
-    //         const response = await axios.get(`https://api.openweathermap.org/data/2.5/find?q=${input}&type=like&sort=population&cnt=10&appid={API key}`);
-    //         const cities = response.data.list.map(city => city.name);
-    //         setSuggestions(cities);
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
-    // };
-
-    // const handleSelectSuggestion = (city) => {
-    //     setCity(city);
-    //     setSuggestions([]);
-    // };
 
     const handleKeyDown = async (e) => {
         if (e.key === 'Enter') {
@@ -131,16 +109,16 @@ export default function MainScreen() {
             setIcon3(`https://openweathermap.org/img/wn/${data.list[21].weather[0].icon}@2x.png`);
             setIcon4(`https://openweathermap.org/img/wn/${data.list[29].weather[0].icon}@2x.png`);
             setIcon5(`https://openweathermap.org/img/wn/${data.list[37].weather[0].icon}@2x.png`);
-            setHigh1(data.list[6].main.temp_max);
-            setHigh2(data.list[14].main.temp_max);
-            setHigh3(data.list[22].main.temp_max);
-            setHigh4(data.list[30].main.temp_max);
-            setHigh5(data.list[38].main.temp_max);
-            setLow1(data.list[5].main.temp_max);
-            setLow2(data.list[13].main.temp_max);
-            setLow3(data.list[21].main.temp_max);
-            setLow4(data.list[29].main.temp_max);
-            setLow5(data.list[37].main.temp_max);
+            setHigh1(Math.max(data.list[0].main.temp_max, data.list[1].main.temp_max, data.list[2].main.temp_max, data.list[3].main.temp_max, data.list[4].main.temp_max, data.list[5].main.temp_max, data.list[6].main.temp_max, data.list[7].main.temp_max));
+            setHigh2(Math.max(data.list[8].main.temp_max, data.list[9].main.temp_max, data.list[10].main.temp_max, data.list[11].main.temp_max, data.list[12].main.temp_max, data.list[13].main.temp_max, data.list[14].main.temp_max, data.list[15].main.temp_max));
+            setHigh3(Math.max(data.list[16].main.temp_max, data.list[17].main.temp_max, data.list[18].main.temp_max, data.list[19].main.temp_max, data.list[20].main.temp_max, data.list[21].main.temp_max, data.list[22].main.temp_max, data.list[23].main.temp_max));
+            setHigh4(Math.max(data.list[24].main.temp_max, data.list[25].main.temp_max, data.list[26].main.temp_max, data.list[27].main.temp_max, data.list[28].main.temp_max, data.list[29].main.temp_max, data.list[30].main.temp_max, data.list[31].main.temp_max));
+            setHigh5(Math.max(data.list[32].main.temp_max, data.list[33].main.temp_max, data.list[34].main.temp_max, data.list[35].main.temp_max, data.list[36].main.temp_max, data.list[37].main.temp_max, data.list[38].main.temp_max, data.list[39].main.temp_max));
+            setLow1(Math.min(data.list[0].main.temp_min, data.list[1].main.temp_min, data.list[2].main.temp_min, data.list[3].main.temp_min, data.list[4].main.temp_min, data.list[5].main.temp_min, data.list[6].main.temp_min, data.list[7].main.temp_min));
+            setLow2(Math.min(data.list[8].main.temp_min, data.list[9].main.temp_min, data.list[10].main.temp_min, data.list[11].main.temp_min, data.list[12].main.temp_min, data.list[13].main.temp_min, data.list[14].main.temp_min, data.list[15].main.temp_min));
+            setLow3(Math.min(data.list[16].main.temp_min, data.list[17].main.temp_min, data.list[18].main.temp_min, data.list[19].main.temp_min, data.list[20].main.temp_min, data.list[21].main.temp_min, data.list[22].main.temp_min, data.list[23].main.temp_min));
+            setLow4(Math.min(data.list[24].main.temp_min, data.list[25].main.temp_min, data.list[26].main.temp_min, data.list[27].main.temp_min, data.list[28].main.temp_min, data.list[29].main.temp_min, data.list[30].main.temp_min, data.list[31].main.temp_min));
+            setLow5(Math.min(data.list[32].main.temp_min, data.list[33].main.temp_min, data.list[34].main.temp_min, data.list[35].main.temp_min, data.list[36].main.temp_min, data.list[37].main.temp_min, data.list[38].main.temp_min, data.list[39].main.temp_min));
             setFiveDayWeatherType([data.list[5].weather[0].main, data.list[13].weather[0].main, data.list[21].weather[0].main, data.list[29].weather[0].main, data.list[37].weather[0].main])
             setCityName(data.city.name);
             setCountryName(data.city.country);
@@ -235,16 +213,16 @@ export default function MainScreen() {
             setIcon3(`https://openweathermap.org/img/wn/${data.list[21].weather[0].icon}@2x.png`);
             setIcon4(`https://openweathermap.org/img/wn/${data.list[29].weather[0].icon}@2x.png`);
             setIcon5(`https://openweathermap.org/img/wn/${data.list[37].weather[0].icon}@2x.png`);
-            setHigh1(data.list[6].main.temp_max);
-            setHigh2(data.list[14].main.temp_max);
-            setHigh3(data.list[22].main.temp_max);
-            setHigh4(data.list[30].main.temp_max);
-            setHigh5(data.list[38].main.temp_max);
-            setLow1(data.list[5].main.temp_max);
-            setLow2(data.list[13].main.temp_max);
-            setLow3(data.list[21].main.temp_max);
-            setLow4(data.list[29].main.temp_max);
-            setLow5(data.list[37].main.temp_max);
+            setHigh1(Math.max(data.list[0].main.temp_max, data.list[1].main.temp_max, data.list[2].main.temp_max, data.list[3].main.temp_max, data.list[4].main.temp_max, data.list[5].main.temp_max, data.list[6].main.temp_max, data.list[7].main.temp_max));
+            setHigh2(Math.max(data.list[8].main.temp_max, data.list[9].main.temp_max, data.list[10].main.temp_max, data.list[11].main.temp_max, data.list[12].main.temp_max, data.list[13].main.temp_max, data.list[14].main.temp_max, data.list[15].main.temp_max));
+            setHigh3(Math.max(data.list[16].main.temp_max, data.list[17].main.temp_max, data.list[18].main.temp_max, data.list[19].main.temp_max, data.list[20].main.temp_max, data.list[21].main.temp_max, data.list[22].main.temp_max, data.list[23].main.temp_max));
+            setHigh4(Math.max(data.list[24].main.temp_max, data.list[25].main.temp_max, data.list[26].main.temp_max, data.list[27].main.temp_max, data.list[28].main.temp_max, data.list[29].main.temp_max, data.list[30].main.temp_max, data.list[31].main.temp_max));
+            setHigh5(Math.max(data.list[32].main.temp_max, data.list[33].main.temp_max, data.list[34].main.temp_max, data.list[35].main.temp_max, data.list[36].main.temp_max, data.list[37].main.temp_max, data.list[38].main.temp_max, data.list[39].main.temp_max));
+            setLow1(Math.min(data.list[0].main.temp_min, data.list[1].main.temp_min, data.list[2].main.temp_min, data.list[3].main.temp_min, data.list[4].main.temp_min, data.list[5].main.temp_min, data.list[6].main.temp_min, data.list[7].main.temp_min));
+            setLow2(Math.min(data.list[8].main.temp_min, data.list[9].main.temp_min, data.list[10].main.temp_min, data.list[11].main.temp_min, data.list[12].main.temp_min, data.list[13].main.temp_min, data.list[14].main.temp_min, data.list[15].main.temp_min));
+            setLow3(Math.min(data.list[16].main.temp_min, data.list[17].main.temp_min, data.list[18].main.temp_min, data.list[19].main.temp_min, data.list[20].main.temp_min, data.list[21].main.temp_min, data.list[22].main.temp_min, data.list[23].main.temp_min));
+            setLow4(Math.min(data.list[24].main.temp_min, data.list[25].main.temp_min, data.list[26].main.temp_min, data.list[27].main.temp_min, data.list[28].main.temp_min, data.list[29].main.temp_min, data.list[30].main.temp_min, data.list[31].main.temp_min));
+            setLow5(Math.min(data.list[32].main.temp_min, data.list[33].main.temp_min, data.list[34].main.temp_min, data.list[35].main.temp_min, data.list[36].main.temp_min, data.list[37].main.temp_min, data.list[38].main.temp_min, data.list[39].main.temp_min));
             setFiveDayWeatherType([data.list[5].weather[0].main, data.list[13].weather[0].main, data.list[21].weather[0].main, data.list[29].weather[0].main, data.list[37].weather[0].main])
             setCityName(data.city.name);
             setCountryName(data.city.country);
@@ -276,7 +254,8 @@ export default function MainScreen() {
     };
 
     return (
-        <div>
+        <div className={`${weatherType}`}>
+            <div className='circleSun'></div>
             <Container>
                 <Row>
                     <Col lg={4}>
@@ -288,7 +267,7 @@ export default function MainScreen() {
                 <TopCards icon={icon} temp={temp} weatherType={weatherType} cityName={cityName} countryName={countryName} />
                 <Row>
                     <div className='daysOfWeatherBox'>
-                            <button className='scrollButton' onClick={scrollLeft}>{"<"}</button>
+                        <button className='scrollButton' onClick={scrollLeft}>{"<"}</button>
                         <div className='dateCardsContainer' ref={containerRef}>
                             <Col>
                                 <DateWeather date={dayOneDate} icon={icon1} high={high1} low={low1} type={fiveDayWeatherType[0]} />
@@ -306,7 +285,7 @@ export default function MainScreen() {
                                 <DateWeather date={dayFiveDate} icon={icon5} high={high5} low={low5} type={fiveDayWeatherType[4]} />
                             </Col>
                         </div>
-                            <button className='scrollButton' onClick={scrollRight}>{">"}</button>
+                        <button className='scrollButton' onClick={scrollRight}>{">"}</button>
                     </div>
                 </Row>
                 <BottomBox arrayIcons={hourIcons} arrayTemp={tempArray} arrayWeatherType={weatherTypeArray} currentTime={currentTimeArray} />

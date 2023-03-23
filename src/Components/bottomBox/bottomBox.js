@@ -21,9 +21,9 @@ export default function BottomBox(props) {
         });
     };
     return (
-        <Container>
+        <Container className='d-flex justify-content-center'>
             <Row className='bottomBox'>
-                <h1 style={{ color: 'white' }}>3 Hour Interval For Today</h1>
+                <h1 style={{ color: 'white' }}>3 Hour Interval</h1>
                 <div className='boxes'>
                     <button className='scrollButton2' onClick={scrollLeft}>{"<"}</button>
                     <div className='dateCardsContainer' ref={containerRef}>

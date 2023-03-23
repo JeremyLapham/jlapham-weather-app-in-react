@@ -7,7 +7,7 @@ export default function DateWeather(props) {
     const [isClicked, setIsClicked] = useState(false);
     const handleClick = () => {
         setIsClicked(!isClicked);
-      };
+    };
 
     return (
         <Container>

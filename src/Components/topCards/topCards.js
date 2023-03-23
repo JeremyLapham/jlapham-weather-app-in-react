@@ -56,7 +56,7 @@ export default function TopCards(props) {
                     <div className='favBox'>
                         {favorites.map(city => {
                             return (
-                                <Row key={city} style={{marginTop:'12px'}}>
+                                <Row key={city} style={{ marginTop: '12px' }}>
                                     <Col>
                                         <h2 style={{ marginLeft: '30px' }}>{city}</h2>
                                     </Col>

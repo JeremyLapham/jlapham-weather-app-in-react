@@ -1,7 +1,7 @@
 export function saveToLocalStorageByCity(city) {
     let favorites = getLocalStorage();
-        favorites.push(city);
-    
+    favorites.push(city);
+
     localStorage.setItem('Favorites', JSON.stringify(favorites));
 }
 

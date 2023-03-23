@@ -12,12 +12,12 @@ export default function BottomBoxInfo(props) {
       </Row>
       <Row>
         <Col>
-          <p style={{ fontSize: '60px', marginTop:'3rem' }}>{Math.round(props.arrayTemp)} °F</p>
+          <p style={{ fontSize: '60px', marginTop: '3rem' }}>{Math.round(props.arrayTemp)} °F</p>
         </Col>
       </Row>
       <Row>
         <Col>
-          <p style={{ fontSize: '30px', marginTop:'4rem' }}>{props.arrayWeatherType}</p>
+          <p style={{ fontSize: '30px', marginTop: '4rem' }}>{props.arrayWeatherType}</p>
         </Col>
       </Row>
       <Row>
