@@ -1,3 +1,5 @@
+Peer Review by Marcel R - The app is wonderfully designed and functionality is spot on. The inclusion of buttons that scroll a div with overlay x-axis that is hidden was really cool, and the background change based on weather is great as well. Mobile can be designed a little further with div sizes, but overall really awesome!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
